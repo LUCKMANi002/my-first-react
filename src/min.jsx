@@ -1,11 +1,12 @@
-import showPic from "./assets/pic1.png"
-import { useState } from "react"
+
+import React, { useState } from "react"
 function Min(){
     const [meme , setMeme] = useState({
         topText:"my first react projec",
         bottomText:"lets try pro",
-        image:showPic
     })
+
+    const [catImage , setCatImage] = useState(null)
 
     function handleChange(event){
        const {name ,value} = event.currentTarget
@@ -14,9 +15,18 @@ function Min(){
        [name]:value
        }))
       
-
     }
+
+   async function memeButton(){
+          await  fetch("https://api.thecatapi.com/v1/images/search")
+            .then(res => res.json())
+            .then(data => setCatImage(data[0].url))
+  
+    }
+
     
+   
+ 
 
     
     return(
@@ -51,10 +61,10 @@ function Min(){
 
     <section>
 
-        <button className="meme-button">Get a new meme image</button>
+        <button className="meme-button" onClick={memeButton}>Get a new meme image</button>
 
         <div className="meme-image">
-           <img className="meme-pc" src={meme.image} alt={showPic} />
+           <img className="meme-pc" src={catImage} alt={catImage} />
            <span className="span1">{meme.topText}</span>
            <span className="span2">{meme.bottomText}</span>
         </div>
