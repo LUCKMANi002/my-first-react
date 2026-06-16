@@ -1,0 +1,59 @@
+
+body{
+  margin: 0;
+}
+.ememe{
+  margin: 0;
+  background-color: blue;
+}
+
+.main{
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-around;
+ 
+ 
+}
+
+label{
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+input{
+  width: 100%;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #00000980;
+  color: white;
+}
+
+
+section > span{
+  
+  text-align: center;
+  margin-block: 15px;
+}
+
+.span1{ 
+
+  
+position: absolute;
+top: 50% ;
+left: 30%;
+color: blue;
+font-size: 2rem;
+
+
+}
+
+.span2{
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  color: blue;
+  font-size: 2rem;
+}
